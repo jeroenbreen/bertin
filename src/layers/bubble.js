@@ -174,8 +174,7 @@ export function bubble(
     )
     .join("circle")
     .attr("class", "onglobe_coords")
-    .attr("fill", (d) =>
-      colorize(features, fill).getcol(d.properties[fill.values])
+    .attr("fill", (d) => d.properties.color
     )
     .attr("stroke", (d) =>
       colorize(features, stroke).getcol(d.properties[stroke.values])
