@@ -192,7 +192,9 @@ export function bubble(
     .attr("cy", (d) => (dorling ? d.y : d.coords[1]))
     .attr("r", (d) => radius(Math.abs(d.properties[values])))
       .on("click", function(event, d) {
-          options.callback(d.properties);
+        if (options.onClick) {
+          options.onClick(d.properties);
+        }
       })
     .on("touchmove mousemove", function (event, d) {
       if (viewof) {
