@@ -695,6 +695,7 @@ export function draw({ params = {}, layers = {} } = {}) {
           leg_round: layer.leg_round,
           leg_divisor: layer.leg_divisor,
           viewof: layer.viewof,
+          callback: layer.callback,
         },
         clipid,
         width,

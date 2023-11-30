@@ -191,6 +191,9 @@ export function bubble(
     .attr("cx", (d) => (dorling ? d.x : d.coords[0]))
     .attr("cy", (d) => (dorling ? d.y : d.coords[1]))
     .attr("r", (d) => radius(Math.abs(d.properties[values])))
+      .on("click", function(event, d) {
+          options.callback(d.properties);
+      })
     .on("touchmove mousemove", function (event, d) {
       if (viewof) {
         d3.select(this)
